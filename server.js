@@ -461,11 +461,11 @@ new WebSocket.Server({
                     ws.send(Buffer.from([1]))
                     let seconds = 0
                     setInterval(() => {
-                        if (seconds === 10) {
+                        if (seconds === 3) {
                             ws.send(Buffer.from([2]))
                             setTimeout(process.exit, 1000)
                         } else {
-                            logger.warn(`[SERVER] Stop Bots En ${10 - seconds} seconds`)
+                            logger.warn(`[SERVER] Stop Bots En ${3 - seconds} seconds`)
                             seconds++
                         }
                     }, 1000)
@@ -506,9 +506,9 @@ new WebSocket.Server({
             stoppingBots = true
             let seconds = 0
             setInterval(() => {
-                if (seconds === 10) process.exit()
+                if (seconds === 3) process.exit()
                 else {
-                    logger.warn(`[SERVER] Stop bots en ${10 - seconds} seconds`)
+                    logger.warn(`[SERVER] Stop bots en ${3 - seconds} seconds`)
                     seconds++
                 }
             }, 1000)
